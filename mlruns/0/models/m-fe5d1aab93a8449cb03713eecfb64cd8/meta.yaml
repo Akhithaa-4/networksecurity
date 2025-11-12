@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/Akhitha%20P/Downloads/mlops/networksecurity/mlruns/0/models/m-fe5d1aab93a8449cb03713eecfb64cd8/artifacts
+creation_timestamp: 1762942879791
+experiment_id: '0'
+last_updated_timestamp: 1762942888322
+model_id: m-fe5d1aab93a8449cb03713eecfb64cd8
+model_type: null
+name: model
+source_run_id: b972ae13feea46a3b3919321a30f68a6
+status: 2
+status_message: null
