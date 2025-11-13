@@ -26,8 +26,10 @@ from sklearn.ensemble import (
 import mlflow
 from urllib.parse import urlparse
 
-#import dagshub
-#dagshub.init(repo_owner='krishnaik06', repo_name='networksecurity', mlflow=True)
+import dagshub
+dagshub.init(repo_owner='Akhithaa-4', repo_name='networksecurity', mlflow=True)
+
+
 
 #os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/krishnaik06/networksecurity.mlflow"
 #os.environ["MLFLOW_TRACKING_USERNAME"]="krishnaik06"
@@ -46,7 +48,7 @@ class ModelTrainer:
             raise NetworkSecurityException(e,sys)
         
     def track_mlflow(self,best_model,classificationmetric):
-        mlflow.set_registry_uri("https://dagshub.com/krishnaik06/networksecurity.mlflow")
+        mlflow.set_registry_uri("https://dagshub.com/Akhithaa-4/networksecurity.mlflow")
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
         with mlflow.start_run():
             f1_score=classificationmetric.f1_score
@@ -99,7 +101,7 @@ class ModelTrainer:
             },
             "Logistic Regression":{},
             "AdaBoost":{
-                'learning_rate':[.1,.02,.001],
+                'learning_rate':[.1,.01,.001],
                 'n_estimators': [8,16,32,64,128,256]
             }
             
@@ -137,7 +139,7 @@ class ModelTrainer:
         Network_Model=NetworkModel(preprocessor=preprocessor,model=best_model)
         save_object(self.model_trainer_config.trained_model_file_path,obj=NetworkModel)
         #model pusher
-        #save_object("final_model/model.pkl",best_model)
+        save_object("final_model/model.pkl",best_model)
         
 
         ## Model Trainer Artifact
