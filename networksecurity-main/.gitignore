@@ -1,0 +1,11 @@
+
+# Virtual environments
+venv/
+mlops311/
+mlops310/
+.env/
+
+
+
+# Logs
+*.log
