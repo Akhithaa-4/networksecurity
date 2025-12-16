@@ -26,17 +26,13 @@ from sklearn.ensemble import (
 import mlflow
 from urllib.parse import urlparse
 
-
-import dagshub
 import os
+import mlflow
 
-dagshub.auth.add_app_token(os.getenv("DAGSHUB_TOKEN"))
+os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/Akhithaa-4/networksecurity.mlflow"
+os.environ["MLFLOW_TRACKING_USERNAME"] = "Akhithaa-4"
+os.environ["MLFLOW_TRACKING_PASSWORD"] = os.getenv("DAGSHUB_TOKEN")
 
-dagshub.init(
-    repo_owner="Akhithaa-4",
-    repo_name="networksecurity",
-    mlflow=True
-)
 
 
 
