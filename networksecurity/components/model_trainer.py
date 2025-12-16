@@ -26,8 +26,17 @@ from sklearn.ensemble import (
 import mlflow
 from urllib.parse import urlparse
 
+
 import dagshub
-dagshub.init(repo_owner='Akhithaa-4', repo_name='networksecurity', mlflow=True)
+import os
+
+dagshub.auth.add_app_token(os.getenv("DAGSHUB_TOKEN"))
+
+dagshub.init(
+    repo_owner="Akhithaa-4",
+    repo_name="networksecurity",
+    mlflow=True
+)
 
 
 
